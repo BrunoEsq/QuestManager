@@ -1,0 +1,9 @@
+button{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    width: 100%;
+}

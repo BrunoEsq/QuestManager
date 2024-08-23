@@ -1,0 +1,7 @@
+<div *ngIf="showquestcomponent">
+    <button (click)="createQuest()">Create Quest</button>
+</div>
+
+<div *ngIf="!showquestcomponent">
+    <app-quest-content></app-quest-content>
+</div>

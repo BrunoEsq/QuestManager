@@ -1,0 +1,11 @@
+nav{
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(181, 179, 179);
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
