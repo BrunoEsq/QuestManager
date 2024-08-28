@@ -1,4 +1,6 @@
- <div *ngFor="let name of name_list; let i = index" >
-    <p>{{name}}</p>
-    <p>{{description_list[i]}}</p>
- </div>
+<div *ngFor="let name of cookieService.name_list; let i = index" [style.background]="cookieService.done_list[i] == 1 ? 'green' : 'red'" >
+   <p>{{name}}</p>
+   <p>{{cookieService.description_list[i]}}</p>
+   <button (click)="removeQuest(i)">Eliminate Cookie</button>
+   <button (click)="doQuest(i)" *ngIf="cookieService.done_list[i] == 0">Done</button>
+</div>

@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+public home: boolean = false;
+public done_quest: boolean = false;
 }
