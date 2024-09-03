@@ -16,7 +16,7 @@ export class CookieService {
   ngAfterViewInit() {
     this.name_list = this.getCookie('name') ? this.getCookie('name').split('|') : [];
     this.description_list = this.getCookie('description') ? this.getCookie('description').split('|') : [];
-    
+    this.done_list = this.getCookie('done') ? this.getCookie('done').split('|').map(item => Number(item)) : [];
 
   }
 
