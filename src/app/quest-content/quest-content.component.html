@@ -1,5 +1,20 @@
-<form action="POST">
-    <input type="text" placeholder="Quest Name"> 
-    <input type="text" placeholder="Quest Description">
+<!-- <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <input type="text" placeholder="Quest Name" name="name" [(ngModel)]="name"> 
+    <input type="text" placeholder="Quest Description" name="description" [(ngModel)]="description">
     <input type="submit" name="Create" id="quest">
-</form>
+  </form>
+ -->
+
+  
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="m-5">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Quest Name</label>
+      <input type="text" class="form-control" maxlength="28" name="name" [(ngModel)]="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">Write here your quest name</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Description</label>
+      <input type="text" class="form-control" maxlength="50" name="description" [(ngModel)]="description" id="exampleInputPassword1">
+    </div>
+    <input type="submit" name="Create" id="quest">
+  </form>

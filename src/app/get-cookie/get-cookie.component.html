@@ -1,0 +1,36 @@
+<h1 class="text1">Pending Quests</h1>
+<ng-container *ngFor="let quest of cookieService.name_list; let i = index">
+  <div *ngIf="cookieService.done_list[i] == 0 && quest && cookieService.description_list[i]" class="profile-card">
+    <header>
+      <a target="_blank" href="#">
+        <img src="https://ui-avatars.com/api/?name={{quest}}" class="hoverZoomLink">
+      </a>
+      <h1>{{quest}}</h1>
+    </header>
+    <div class="profile-bio">
+      <p>{{cookieService.description_list[i]}}</p>
+    </div>
+    <ul class="profile-social-links">
+      <button (click)="removeQuest(i)" class="button-delete">Delete</button>
+      <button (click)="doQuest(i)" class="button-done">Done</button>
+    </ul>
+  </div>
+</ng-container>
+
+<h1 class="text1">Done Quests</h1>
+<ng-container *ngFor="let quest of cookieService.name_list; let i = index">
+  <div *ngIf="cookieService.done_list[i] == 1 && quest && cookieService.description_list[i]" class="profile-card">
+    <header>
+      <a target="_blank" href="#">
+        <img src="https://ui-avatars.com/api/?name={{quest}}" class="hoverZoomLink">
+      </a>
+      <h1>{{quest}}</h1>
+    </header>
+    <div class="profile-bio">
+      <p>{{cookieService.description_list[i]}}</p>
+    </div>
+    <ul class="profile-social-links">
+      <button (click)="removeQuest(i)" class="button-delete">Delete</button>
+    </ul>
+  </div>
+</ng-container>
