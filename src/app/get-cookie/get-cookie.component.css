@@ -1,1 +1,336 @@
-/* nada */
+html {
+  height: 100%;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgb(72, 76, 122);
+  font-size: 14px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background-image: linear-gradient(180deg, #fff, #f5f5fa);
+  box-shadow: 0 4px 11px rgb(37 44 97 / 15%), 0 1px 3px rgb(93 100 148 / 20%);
+  transition: all 0.2s ease-out;
+  margin-right: 10px;
+}
+
+.button-delete {
+  margin-bottom: 100px;
+}
+
+.button-delete:hover {
+  box-shadow: 0 8px 22px rgb(37 44 97 / 15%), 0 4px 6px rgba(238, 9, 9, 0.2);
+}
+
+.button-done:hover {
+  box-shadow: 0 8px 22px rgb(37 44 97 / 15%), 0 4px 6px rgba(128, 255, 0, 0.2);
+}
+
+body {
+  overflow: hidden;
+  background-size: cover;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font: 14px/1.618em "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  font-family: 'Libre Baskerville';
+}
+
+body:before {
+  content: "";
+  height: 0;
+  padding: 0;
+  border: 130em solid #313440;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  z-index: 2;
+  display: block;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.profile-card {
+  margin-top: 20px;
+  background: #FFB300;
+  width: 56px;
+  height: 100px;
+  display: inline-block;
+  margin: 10px;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+.profile-card header {
+  width: 179px;
+  height: 330px;
+  padding: 40px 20px 30px;
+  display: inline-block;
+  float: left;
+  border-right: 2px dashed #EEEEEE;
+  background: #FFFFFF;
+  color: #000000;
+  margin-top: 50px;
+  opacity: 0;
+  text-align: center;
+  animation: moveIn 1s 3.1s ease forwards;
+}
+
+.profile-card header h1 {
+  color: #FF5722;
+}
+
+.profile-card header a {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin: 25px 30px;
+}
+
+.profile-card header a:after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  border: 4px solid #FFFFFF;
+  transform: scale(0);
+  background: linear-gradient(#2196F3 0%, #2196F3 50%, #FFC107 50%, #FFC107 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: scaleIn 0.3s 3.5s ease forwards;
+}
+
+.profile-card header a>img {
+  width: 80px;
+  max-width: 100%;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.06);
+}
+
+.profile-card header a:hover>img {
+  box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .profile-bio {
+  width: 175px;
+  height: 180px;
+  display: inline-block;
+  float: right;
+  padding: 50px 20px 30px;
+  background: #FFFFFF;
+  color: #333333;
+  margin-top: 50px;
+  text-align: center;
+  opacity: 0;
+  animation: moveIn 1s 3.1s ease forwards;
+}
+
+.profile-social-links {
+  width: 218px;
+  display: inline-block;
+  float: right;
+  margin: 0;
+  padding: 15px 20px;
+  background: #FFFFFF;
+  margin-top: 50px;
+  text-align: center;
+  opacity: 0;
+  box-sizing: border-box;
+  animation: moveIn 1s 3.1s ease forwards;
+}
+
+.profile-social-links li {
+  list-style: none;
+  margin: -5px 0 0;
+  padding: 0;
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+.profile-social-links li a {
+  display: inline-block;
+  color: red;
+  width: 24px;
+  height: 24px;
+  padding: 6px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-social-links li a i {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes init {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0;
+    padding: 0;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 0;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #FFB300;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+    background: #E0E0E0;
+  }
+}
+
+@keyframes materia {
+  0% {
+    background: #E0E0E0;
+  }
+  50% {
+    border-radius: 4px;
+  }
+  100% {
+    width: 440px;
+    height: 280px;
+    background: #FFFFFF;
+    border-radius: 4px;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: -20px;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-aspect-ratio: 4/3) {
+  body {
+    background-size: cover;
+  }
+  body:before {
+    width: 0;
+  }
+}
+
+@media screen and (min-height: 480px) {
+  .profile-card header,
+  .profile-card .profile-bio,
+  .profile-social-links {
+    width: auto;
+    height: auto;
+    padding: 30px 20px;
+    display: block;
+    float: none;
+  }
+
+  @keyframes materia {
+    0% {
+      background: #E0E0E0;
+    }
+    50% {
+      border-radius: 4px;
+    }
+    100% {
+      width: 280px;
+      height: 440px;
+      background: #FFFFFF;
+      border-radius: 4px;
+    }
+  }
+}
